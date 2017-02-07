@@ -1,0 +1,110 @@
+<%- include('partials/header')  %>
+<style>
+
+body {
+  background-color: aliceblue;
+}
+.bodybox {
+margin-right: 20px;
+}
+.box {
+  background-color: white;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10em;
+  padding: 5%;
+  border: solid black 3px;
+  min-width: 100%;
+}
+.contentbox {
+  margin-left: 15px;
+}
+.bottom-left {
+  float: right;
+}
+.userimg {
+  height: 4em;
+}
+.user{
+  float: right;
+  padding-right: 10px;
+}
+.trending {
+  padding-top: 2em;
+}
+.tweet {
+  display: block;
+}
+
+#tweet {
+  width: 100%;
+  padding: .5em 1em;
+}
+
+</style>
+
+<main class="container-fluid bodybox">
+<div class="row">
+  <div class="side-display col-md-4 hidden-sm-down">
+      <div class="user-box box">
+        <div class="user">
+        <h3>Full Name</h3>
+        <p>@username</p>
+      </div>
+        <img src="images/birdie.png" class="userimg">
+        <p>Messages</p>
+        <h5>12</h5>
+      </div>
+      <div class="trending">
+        <h3>Trending Awetweets</h3>
+        <div class="trending-box box">
+          <h6>#things</h6>
+          <h6>#things</h6>
+          <h6>#things</h6>
+          <h6>#things</h6>
+          <h6>#things</h6>
+        </div>
+      </div>
+  </div>
+<div class="mainbody col-xs-12 col-md-8">
+  <div class="inputbox box">
+    <form method="post" action>
+      <label for="name">Username: </label>
+      <div>
+        <input id="name" name="name">
+      </div>
+      <label for="tweet">Tweet: </label>
+      <div>
+        <textarea id="tweet" name="tweet" maxlength="255" cols="50"></textarea>
+      </div>
+      <br>
+      <div>
+        <input class="left" type="submit" name="submit">
+      </div>
+    </form>
+  </div>
+  <div class="bodybox row">
+      <div class="col-xs-11">
+          <% for(let object of all_tweets) { %>
+              <div class="contentbox box tweet row">
+                <div><h4><%=object.name%></h4></div>
+                <div><p><%=object.tweet%></p></div>
+                <h6 class="bottom-left">Date</h6>
+              </div>
+            <% } %>
+      </div>
+        <% for (let i = 0; i < 12;  i += 1) { %>
+          <div class="contentbox box row">
+              <h4>Username</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id nisl quis orci ullamcorper eleifend id egestas lectus. Ut posuere pulvinar velit eu accumsan. Nunc placerat purus in pellentesque posuere. Phasellus odio erat, ultrices non aliquam id, laoreet id neque. Mauris urna eros, tincidunt at risus eu, pellentesque aliquam nisi. Sed sed euismod erat. Phasellus aliquam, lacus in varius ullamcorper, tellus nibh luctus augue, eu sagittis libero erat id tortor. Maecenas eu nisi lectus. Quisque turpis eros, efficitur in ornare non, faucibus quis velit. Aliquam commodo, metus vitae aliquam lacinia, est dolor venenatis ex, sed aliquet sem nisl nec purus</p>
+              <h6 class="bottom-left">Date</h6>
+          </div>
+       <% } %>
+      </div>
+  </div>
+</div>
+</div>
+
+</main>
+
+<%- include('partials/footer') %>

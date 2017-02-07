@@ -1,0 +1,61 @@
+<style>
+[class*='nav'] {
+  background-color: white;
+  border-bottom: solid black 4px;
+  height: 5em;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+}
+
+a {
+  font-size: 1.5em;
+  text-align: center;
+  color: black;
+}
+
+.logo img {
+  height: 4em;
+  padding: 3px;
+}
+
+.usermenu {
+  position: absolute;
+  float: right;
+  margin-left: 70%;
+  margin-top: 10px;
+}
+
+.dash {
+  margin-left: 20px;
+}
+
+</style>
+
+<nav class="navbar navbar-default navbar-static-top container-fluid">
+  <div class="row">
+    <div class="col-xs-9">
+      <div class="logo"><img src="images/birdie.png"></div>
+    </div>
+    <div class="menubox offset-md-7 col-md-4 hidden-sm-down usermenu">
+      <a href="/" class="menu">Home</a>
+      <a href="/dashboard" class="menu dash">Dashboard</a>
+    </div>
+
+
+
+  <a class="btn btn-secondary dropdown-toggle offset-9 col-xs-3 hidden-md-up" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-menu-hamburger">
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/homepage">Home</a>
+    <a class="dropdown-item" href="/dashboard">Dashboard</a>
+  </div>
+</div>
+</nav>
